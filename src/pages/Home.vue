@@ -1,111 +1,130 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue'
-import axios from 'axios'
-import { inject } from 'vue'
-import ItemList from '../components/ItemList.vue'
+import { ref, watch, onMounted } from "vue";
+import axios from "axios";
+import { inject } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import ItemList from "../components/ItemList.vue";
 
-const { cart, addToCart, removeFromCart } = inject('cart')
+const carouselFhotos = [
+  "Carousel_devil_doesnt_sleep.jpeg",
+  "Carousel_girl_DEvil_doesnt_sleep.jpeg",
+];
 
-const items = ref([])
-const searchQuerry = ref(null)
+const { cart, addToCart, removeFromCart } = inject("cart");
+
+const items = ref([]);
+const searchQuerry = ref(null);
 
 const fetchFavorites = async () => {
   try {
-    const { data: favorites } = await axios.get(`https://e9b03337b16fcf1d.mokky.dev/favorites`)
+    const { data: favorites } = await axios.get(
+      `https://e9b03337b16fcf1d.mokky.dev/favorites`
+    );
     items.value = items.value.map((item) => {
-      const favorite = favorites.find((favorite) => favorite.parentId === item.id)
+      const favorite = favorites.find(
+        (favorite) => favorite.parentId === item.id
+      );
       if (!favorite) {
-        return item
+        return item;
       }
       return {
         ...item,
         isFavorite: true,
-        favoriteId: favorite.id
-      }
-    })
+        favoriteId: favorite.id,
+      };
+    });
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 const fetchItems = async () => {
   try {
     const params = {
-      title: searchQuerry.value
-    }
+      title: searchQuerry.value,
+    };
     if (searchQuerry.value) {
-      params.title = `*${searchQuerry.value}*`
-    } else params.title = null
-    const { data } = await axios.get(`https://e9b03337b16fcf1d.mokky.dev/items`, { params })
+      params.title = `*${searchQuerry.value}*`;
+    } else params.title = null;
+    const { data } = await axios.get(
+      `https://e9b03337b16fcf1d.mokky.dev/items`,
+      { params }
+    );
     items.value = data.map((obj) => ({
       ...obj,
       isFavorite: false,
       isAdded: false,
-      favoriteId: null
-    }))
+      favoriteId: null,
+    }));
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 
 const addToFavorite = async (item) => {
   try {
     if (!item.isFavorite) {
       const obj = {
         parentId: item.id,
-        item
-      }
-      item.isFavorite = true
+        item,
+      };
+      item.isFavorite = true;
 
-      const { data } = await axios.post(`https://e9b03337b16fcf1d.mokky.dev/favorites`, obj)
+      const { data } = await axios.post(
+        `https://e9b03337b16fcf1d.mokky.dev/favorites`,
+        obj
+      );
 
-      item.favoriteId = data.id
+      item.favoriteId = data.id;
     } else {
-      item.isFavorite = false
+      item.isFavorite = false;
 
-      await axios.delete(`https://e9b03337b16fcf1d.mokky.dev/favorites/${item.favoriteId}`)
+      await axios.delete(
+        `https://e9b03337b16fcf1d.mokky.dev/favorites/${item.favoriteId}`
+      );
 
-      item.favoriteId = null
+      item.favoriteId = null;
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 
 const onCangeSearchInput = (event) => {
-  searchQuerry.value = event.target.value
-}
+  searchQuerry.value = event.target.value;
+};
 
 const onClickAddPlus = (item) => {
   if (!item.isAdded) {
-    addToCart(item)
+    addToCart(item);
   } else {
-    removeFromCart(item)
+    removeFromCart(item);
   }
-}
+};
 
 onMounted(async () => {
-  const localCart = localStorage.getItem('cart')
-  cart.value = localCart ? JSON.parse(localCart) : []
+  const localCart = localStorage.getItem("cart");
+  cart.value = localCart ? JSON.parse(localCart) : [];
 
   items.value = items.value.map((item) => ({
     ...item,
-    isAdded: cart.value.some((cartItem) => cartItem.id === item.id)
-  }))
-  await fetchItems()
-  await fetchFavorites()
-})
+    isAdded: cart.value.some((cartItem) => cartItem.id === item.id),
+  }));
+  await fetchItems();
+  await fetchFavorites();
+});
 
-watch(searchQuerry, fetchItems)
+watch(searchQuerry, fetchItems);
 
 watch(cart, () => {
   items.value = items.value.map((item) => ({
     ...item,
-    isAdded: false
-  }))
-})
+    isAdded: false,
+  }));
+});
 </script>
 <template>
-  <div class="flex justify-end items-center">
+  <div class="flex justify-end items-center mr-2">
     <div class="flex items-end gap-4">
       <div class="relative">
         <img
@@ -123,5 +142,31 @@ watch(cart, () => {
       </div>
     </div>
   </div>
-  <ItemList :items="items" @add-to-favorite="addToFavorite" @add-to-cart="onClickAddPlus" />
+  <swiper
+    :slides-per-view="1"
+    :pagination="{ clicable: true }"
+    :scrollbar="{ draggable: true }"
+    navigation
+    :loop="true"
+  >
+    <swiper-slide v-for="(photo, index) in carouselFhotos" :key="index">
+      <img :src="`../../../public/image/${photo}`" />
+    </swiper-slide>
+  </swiper>
+  <ItemList
+    :items="items"
+    @add-to-favorite="addToFavorite"
+    @add-to-cart="onClickAddPlus"
+  />
 </template>
+<style scoped>
+.swiper {
+  width: 250px;
+  height: 300px;
+  border: 10px solid rgb(114, 0, 0); 
+}
+.swiper-slide img{
+  width:250px;
+  height: 300px;
+}
+</style>

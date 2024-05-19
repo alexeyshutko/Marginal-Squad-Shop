@@ -77,7 +77,7 @@ provide('cart', {
   />
   <div class="w-4/5 m-auto bg-white rounded-xl shadow-2xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
-    <div class="p-10">
+    <div class="">
       <router-view></router-view>
     </div>
   </div>
