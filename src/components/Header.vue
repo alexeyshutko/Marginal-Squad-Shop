@@ -53,7 +53,7 @@ const emit = defineEmits(['openDrawer'])
       >
     </ul>
   </header>
-  <marquee behaivor="alternate" direction="left" class="font-bold text-center text-red-600">
+  <marquee behaivor="alternate" direction="left" class="font-bold text-center text-red-600 shadow-2xl bg-black border-b border-red-700">
     МАРГИНАЛ (от лат. margo, marginis — край, межа) в искусстве: автор, придерживающийся резко
     индивидуальной, отличающейся от общепринятой, творческой стратегии; смесь талантливого чудака и
     (не)добровольного изгоя; мастер неподражаемой своеобразности; художник, чье наследие всей своей
