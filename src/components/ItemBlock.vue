@@ -14,14 +14,14 @@ defineProps({
   <div
     class="relative blurred-background m-10 border-double border-4 border-red-600 p-14 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition"
   >
-    <img
+    <!-- <img
       @click="onClickFavorite"
       :src="!isFavorite ? '../../public/image/like_black.svg' : '../../public/image/like_red.svg'"
       alt="Like_Item"
       width="50"
       height="50"
       class="absolute top-8 left-8"
-    />
+    /> -->
     <img
       :src="'../../public/image/' + imageUrl"
       alt="BLACK_Hoodie_Devil_Doesnt_Sleep"

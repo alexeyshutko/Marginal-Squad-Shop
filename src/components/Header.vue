@@ -18,7 +18,7 @@ const emit = defineEmits(['openDrawer'])
         />
         <div>
           <h1 class="text-2xl font-bold uppercase">MARGINAL SQUAD</h1>
-          <p class="text-red-600 text-center font-bold">Worldwide</p>
+          <h2 class="text-red-600 text-center font-bold">Worldwide</h2>
         </div>
       </div></router-link
     >
@@ -32,7 +32,7 @@ const emit = defineEmits(['openDrawer'])
         <b>{{ totalPrice }} ₽</b>
       </li>
 
-      <router-link to="/favorites"
+      <!-- <router-link to="/favorites"
         ><li class="flex items-center mr-4 text-black-600 cursor-pointer hover:text-red-600">
           <img
             src="../../public/image/like_black.svg"
@@ -49,11 +49,11 @@ const emit = defineEmits(['openDrawer'])
         ><li class="flex items-center mr-4 text-black-600 cursor-pointer hover:text-red-600">
           <img src="../../public/image/profile.svg" alt="Profile" width="50" height="50" />
           <b>Профиль</b>
-        </li></router-link
-      >
+        </li></router-link -->
+      <!-- > -->
     </ul>
   </header>
-  <marquee behaivor="alternate" direction="left" class="font-bold text-center text-red-600 shadow-2xl bg-black border-b border-red-700">
+  <marquee behaivor="alternate" direction="left" class="font-bold text-center text-red-600 shadow-2xl bg-black border-b border-red-700 italic">
     МАРГИНАЛ (от лат. margo, marginis — край, межа) в искусстве: автор, придерживающийся резко
     индивидуальной, отличающейся от общепринятой, творческой стратегии; смесь талантливого чудака и
     (не)добровольного изгоя; мастер неподражаемой своеобразности; художник, чье наследие всей своей

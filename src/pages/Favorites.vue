@@ -17,6 +17,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1 class="text-red-600">Закладки</h1>
+  <h1 class="text-red-600 text-center font">Закладки</h1>
   <ItemList :items="favorites" @add-to-favorite="addToFavorite" @add-to-cart="onClickAddPlus" />
 </template>
+<style>
+.font{
+  font-family: "Courier";
+}
+</style>

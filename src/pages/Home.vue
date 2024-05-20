@@ -8,7 +8,8 @@ import ItemList from "../components/ItemList.vue";
 
 const carouselFhotos = [
   "Carousel_devil_doesnt_sleep.jpeg",
-  "Carousel_girl_DEvil_doesnt_sleep.jpeg",
+  "devil_doesnt_sleep_Max.jpeg",
+  "Devil_doesnt_sleep_Max_Tolstoy.jpeg"
 ];
 
 const { cart, addToCart, removeFromCart } = inject("cart");
@@ -124,7 +125,21 @@ watch(cart, () => {
 });
 </script>
 <template>
-  <div class="flex justify-end items-center mr-2">
+  <swiper
+    :slides-per-view="1"
+    :pagination="{ clicable: true }"
+    :scrollbar="{ draggable: true }"
+    navigation
+    :loop="true"
+  >
+    <swiper-slide v-for="(photo, index) in carouselFhotos" :key="index">
+      <img :src="`../../../public/image/${photo}`" />
+    </swiper-slide>
+  </swiper>
+  <div class="text-center">
+  <h1>SS autumn 2024</h1>
+</div>
+  <div class="flex justify-end items-center mr-2 mb-2 mt-2">
     <div class="flex items-end gap-4">
       <div class="relative">
         <img
@@ -142,17 +157,6 @@ watch(cart, () => {
       </div>
     </div>
   </div>
-  <swiper
-    :slides-per-view="1"
-    :pagination="{ clicable: true }"
-    :scrollbar="{ draggable: true }"
-    navigation
-    :loop="true"
-  >
-    <swiper-slide v-for="(photo, index) in carouselFhotos" :key="index">
-      <img :src="`../../../public/image/${photo}`" />
-    </swiper-slide>
-  </swiper>
   <ItemList
     :items="items"
     @add-to-favorite="addToFavorite"
@@ -161,12 +165,13 @@ watch(cart, () => {
 </template>
 <style scoped>
 .swiper {
-  width: 250px;
-  height: 300px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  width: 100%;
+  height: 700px;
   border: 10px solid rgb(114, 0, 0); 
 }
 .swiper-slide img{
-  width:250px;
-  height: 300px;
+  width:100%;
+  height: 700px;
 }
 </style>
