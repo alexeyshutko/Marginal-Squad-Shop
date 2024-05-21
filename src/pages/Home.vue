@@ -7,9 +7,8 @@ import "swiper/css";
 import ItemList from "../components/ItemList.vue";
 
 const carouselFhotos = [
-  "Carousel_devil_doesnt_sleep.jpeg",
   "devil_doesnt_sleep_Max.jpeg",
-  "Devil_doesnt_sleep_Max_Tolstoy.jpeg"
+  "Devil_doesnt_sleep_Max_Tolstoy.jpeg",
 ];
 
 const { cart, addToCart, removeFromCart } = inject("cart");
@@ -126,7 +125,7 @@ watch(cart, () => {
 </script>
 <template>
   <swiper
-    :slides-per-view="1"
+    :slides-per-view="2"
     :pagination="{ clicable: true }"
     :scrollbar="{ draggable: true }"
     navigation
@@ -137,8 +136,8 @@ watch(cart, () => {
     </swiper-slide>
   </swiper>
   <div class="text-center">
-  <h1>SS autumn 2024</h1>
-</div>
+    <h1>SS autumn 2024</h1>
+  </div>
   <div class="flex justify-end items-center mr-2 mb-2 mt-2">
     <div class="flex items-end gap-4">
       <div class="relative">
@@ -168,10 +167,10 @@ watch(cart, () => {
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   width: 100%;
   height: 700px;
-  border: 10px solid rgb(114, 0, 0); 
+  border: 10px solid rgb(114, 0, 0);
 }
-.swiper-slide img{
-  width:100%;
+.swiper-slide img {
+  width: 100%;
   height: 700px;
 }
 </style>
