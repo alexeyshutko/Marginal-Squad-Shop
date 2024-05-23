@@ -124,6 +124,7 @@ watch(cart, () => {
 });
 </script>
 <template>
+  
   <swiper
     :slides-per-view="2"
     :pagination="{ clicable: true }"
