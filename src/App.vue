@@ -103,7 +103,7 @@ provide("cart", {
 </template>
 <style>
 .scrollmenu{
-  width: 100%;
+  width: 170vh;
   height: 100vh;
   overflow-y: scroll;
 }

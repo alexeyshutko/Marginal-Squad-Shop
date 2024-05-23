@@ -12,7 +12,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="relative blurred-background m-10 border-double border-4 border-red-600 p-14 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition"
+    class="relative m-10 border-double border-4 border-red-600 p-14 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
   >
     <!-- <img
       @click="onClickFavorite"

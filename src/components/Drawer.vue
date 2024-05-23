@@ -15,7 +15,7 @@ defineProps({
 </script>
 <template>
   <!-- <div class="fixed top-0 left-0 h-full w-full bg-black z-10 opacity-70"></div> -->
-  <div class="w-96 bg-black h-full fixed right-0 top-0 z-20 p-8">
+  <div class="w-96 bg-black bg-opacity-75 h-full fixed right-0 top-0 z-20 p-8">
     <DrawerHeader />
     <div v-if="!totalPrice" class="flex h-full items-center">
       <InfoBlock

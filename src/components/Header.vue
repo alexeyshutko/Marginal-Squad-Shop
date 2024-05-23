@@ -14,7 +14,7 @@ const emit = defineEmits(['openDrawer'])
           alt="Logo"
           width="150"
           height="100"
-          class="mr-4 rounded-full"
+          class="mr-4 rounded-full opacity-75"
         />
         <div>
           <h1 class="text-2xl font-bold uppercase">MARGINAL SQUAD</h1>
