@@ -5,6 +5,13 @@
 /* body {
   background-color: rgb(124 10 2);
 } */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Courier";
+}
+.scrollmenu {
+  width: 170vh;
+  height: 100vh;
+  overflow-y: scroll;
 }

@@ -24,7 +24,7 @@ defineProps({
     /> -->
     <img
       :src="'../../public/image/' + imageUrl"
-      alt="BLACK_Hoodie_Devil_Doesnt_Sleep"
+      alt="Marginis"
       width="400"
       height="400"
     />

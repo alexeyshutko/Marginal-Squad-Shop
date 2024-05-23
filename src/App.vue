@@ -102,11 +102,7 @@ provide("cart", {
   </div>
 </template>
 <style>
-.scrollmenu{
-  width: 170vh;
-  height: 100vh;
-  overflow-y: scroll;
-}
+
 .video-bg {
   height: 100vh;
   width: 100%;
