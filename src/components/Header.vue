@@ -14,10 +14,10 @@ const emit = defineEmits(['openDrawer'])
           alt="Logo"
           width="150"
           height="100"
-          class="mr-4 rounded-full opacity-75"
+          class="mr-4 rounded-full border-double border-4 border-red-600 mt-2 mb-2"
         />
         <div>
-          <h1 class="text-2xl font-bold uppercase">MARGINAL SQUAD</h1>
+          <h1 class="text-2xl font-bold uppercase">MARGINIS</h1>
           <h2 class="text-red-600 text-center font-bold">Worldwide</h2>
         </div>
       </div></router-link
@@ -54,7 +54,7 @@ const emit = defineEmits(['openDrawer'])
     </ul>
   </header>
   <marquee behaivor="alternate" direction="left" class="font-bold text-center text-red-600 shadow-2xl bg-black border-b border-red-700 italic">
-    МАРГИНАЛ (от лат. margo, marginis — край, межа) в искусстве: автор, придерживающийся резко
+   (от лат. margo, marginis — край, межа) в искусстве: автор, придерживающийся резко
     индивидуальной, отличающейся от общепринятой, творческой стратегии; смесь талантливого чудака и
     (не)добровольного изгоя; мастер неподражаемой своеобразности; художник, чье наследие всей своей
     сутью противостоит официозу.

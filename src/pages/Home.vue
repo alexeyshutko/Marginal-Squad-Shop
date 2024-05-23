@@ -170,7 +170,7 @@ watch(cart, () => {
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   width: 100%;
   height: 700px;
-  border: 10px solid rgb(114, 0, 0);
+  /* border: 10px solid rgb(114, 0, 0); */
 }
 .swiper-slide img {
   width: 100%;
