@@ -10,7 +10,7 @@ const carouselFhotos = [
   "devil_doesnt_sleep_Max.jpeg",
   "Devil_doesnt_sleep_Max_Tolstoy.jpeg",
   "post_culture_first.jpeg",
-  "post_culture_first.jpeg",
+  "post_culture_second.jpeg",
 ];
 
 const { cart, addToCart, removeFromCart } = inject("cart");
@@ -126,7 +126,6 @@ watch(cart, () => {
 });
 </script>
 <template>
-
   <swiper
     :slides-per-view="2"
     :pagination="{ clicable: true }"
