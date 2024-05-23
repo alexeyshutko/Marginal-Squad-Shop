@@ -18,7 +18,7 @@ const emit = defineEmits(['openDrawer'])
         />
         <div>
           <h1 class="text-2xl font-bold uppercase">MARGINIS</h1>
-          <h2 class="text-red-600 text-center font-bold">Worldwide</h2>
+          <h2 class="text-red-600 text-center font-bold">WORLDWIDE</h2>
         </div>
       </div></router-link
     >
