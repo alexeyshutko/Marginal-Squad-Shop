@@ -1,12 +1,12 @@
 <script setup>
 defineProps({
-  totalPrice: Number
-})
-const emit = defineEmits(['openDrawer'])
+  totalPrice: Number,
+});
+const emit = defineEmits(["openDrawer"]);
 </script>
 
 <template>
-  <header class="flex justify-between border-b border-red-700 px-8">
+  <header class="flex justify-between px-8">
     <router-link to="/"
       ><div class="flex items-center">
         <img
@@ -28,7 +28,12 @@ const emit = defineEmits(['openDrawer'])
         @click="() => emit('openDrawer')"
         class="flex items-center mr-4 text-black-600 cursor-pointer hover:text-red-600"
       >
-        <img src="../../public/image/cart.svg" alt="Cart" width="50" height="50" />
+        <img
+          src="../../public/image/cart.svg"
+          alt="Cart"
+          width="50"
+          height="50"
+        />
         <b>{{ totalPrice }} ₽</b>
       </li>
 
@@ -53,10 +58,15 @@ const emit = defineEmits(['openDrawer'])
       <!-- > -->
     </ul>
   </header>
-  <marquee behaivor="alternate" direction="left" class="font-bold text-center bg-opacity-75 text-red-300 shadow-2xl bg-black border-b border-red-700 italic">
-   (от лат. margo, marginis — край, межа) в искусстве: автор, придерживающийся резко
-    индивидуальной, отличающейся от общепринятой, творческой стратегии; смесь талантливого чудака и
-    (не)добровольного изгоя; мастер неподражаемой своеобразности; художник, чье наследие всей своей
-    сутью противостоит официозу.
+  <marquee
+    behaivor="alternate"
+    direction="left"
+    class="font-bold text-center bg-opacity-75 text-red-300 shadow-2xl bg-black italic"
+  >
+    (from Latin margo, marginis — edge, border) in art: an author who adheres to
+    a sharply individual, distinctive creative strategy that differs from the
+    mainstream; a mix of a talented eccentric and an (in)voluntary outcast; a
+    master of inimitable uniqueness; an artist whose legacy fundamentally
+    opposes the officialdom.
   </marquee>
 </template>

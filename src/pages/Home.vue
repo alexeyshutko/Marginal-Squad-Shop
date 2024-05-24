@@ -142,7 +142,7 @@ watch(cart, () => {
   </div>
   <div class="flex justify-end items-center mr-2 mb-2 mt-2">
     <div class="flex items-end gap-4">
-      <div class="relative">
+      <div class="relative border border-2 border-red-600">
         <img
           src="../../public/image/search.svg"
           class="absolute left-3 top-3"
