@@ -3,11 +3,14 @@ import { ref, watch, onMounted } from "vue";
 import axios from "axios";
 import { inject } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import ItemList from "../components/ItemList.vue";
 
+const modules = [Autoplay, Pagination, Navigation];
+
 const carouselFhotos = [
-  "devil_doesnt_sleep_Max.jpeg",
+  "MS_SS_18_MAX.jpeg",
   "Devil_doesnt_sleep_Max_Tolstoy.jpeg",
   "post_culture_first.jpeg",
   "post_culture_second.jpeg",
@@ -127,11 +130,17 @@ watch(cart, () => {
 </script>
 <template>
   <swiper
-    :slides-per-view="2"
-    :pagination="{ clicable: true }"
-    :scrollbar="{ draggable: true }"
-    navigation
-    :loop="true"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 5000,
+      disableOnInteraction: false,
+    }"
+    :pagination="{
+      clickable: true,
+    }"
+    :navigation="true"
+    :modules="modules"
+    class="swiper"
   >
     <swiper-slide v-for="(photo, index) in carouselFhotos" :key="index">
       <img :src="`../../../public/image/${photo}`" />
@@ -153,7 +162,7 @@ watch(cart, () => {
         <input
           @input="onCangeSearchInput"
           class="border rounded-md py-2 pl-10 pr-4 outline-none focus:border-gray-400"
-          placeholder="Поиск"
+          placeholder="Search"
         />
       </div>
     </div>
@@ -168,11 +177,11 @@ watch(cart, () => {
 .swiper {
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   width: 100%;
-  height: 700px;
+  height: 80vh;
   /* border: 10px solid rgb(114, 0, 0); */
 }
 .swiper-slide img {
   width: 100%;
-  height: 700px;
+  height: 80vh;
 }
 </style>

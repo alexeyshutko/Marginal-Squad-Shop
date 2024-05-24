@@ -61,12 +61,13 @@ const emit = defineEmits(["openDrawer"]);
   <marquee
     behaivor="alternate"
     direction="left"
-    class="font-bold text-center bg-opacity-75 text-red-300 shadow-2xl bg-black italic"
+    class="font-bold text-center bg-opacity-75 text-red-400 shadow-2xl bg-black"
   >
+  <h1>
     (from Latin margo, marginis — edge, border) in art: an author who adheres to
     a sharply individual, distinctive creative strategy that differs from the
     mainstream; a mix of a talented eccentric and an (in)voluntary outcast; a
     master of inimitable uniqueness; an artist whose legacy fundamentally
-    opposes the officialdom.
+    opposes the officialdom.</h1>
   </marquee>
 </template>

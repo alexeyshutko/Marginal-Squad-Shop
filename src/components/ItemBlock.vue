@@ -12,7 +12,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="p-4 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
+    class="p-1 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
   >
     <!-- <img
       @click="onClickFavorite"
@@ -26,11 +26,11 @@ defineProps({
       :src="'../../public/image/' + imageUrl"
       alt="Marginis"
     />
-    <p class="mt-2 text-red-700">{{ title }}</p>
+    <h1 class="mt-2 text-red-700">{{ title }}</h1>
     <div class="flex justify-between mt-5">
       <div class="flex flex-col">
-        <span class="text-red-700">Цена:</span>
-        <b class="text-red-700">{{ price }} ₽</b>
+        <span class="text-red-700">Price:</span>
+        <h1 class="text-red-700">{{ price }} ₽</h1>
       </div>
 
       <img

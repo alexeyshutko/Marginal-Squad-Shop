@@ -11,7 +11,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
 </script>
 
 <template>
-  <h1 class="text-center font-bold text-xl">Jackets</h1>
+  <h1 class="text-center font-bold text-xl">JACKETS</h1>
   <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
     <swiper
     :slides-per-view="3"
@@ -34,7 +34,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl">Hoody</h1>
+  <h1 class="text-center font-bold text-xl">HOODY</h1>
   <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
     <swiper
     :slides-per-view="4"
@@ -57,7 +57,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Shirts</h1>
+  <h1 class="text-center font-bold text-xl m-2">SHIRTS</h1>
   <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
     <swiper
     :slides-per-view="2"
@@ -80,7 +80,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">T-shirts</h1>
+  <h1 class="text-center font-bold text-xl m-2">T-SHIRTS</h1>
   <div class="flex flex-row p-0 item_list_class" v-auto-animate>
     <swiper
     :slides-per-view="6"
@@ -103,7 +103,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Jeans</h1>
+  <h1 class="text-center font-bold text-xl m-2">JEANS</h1>
   <div class="flex flex-row p-0 item_list_class" v-auto-animate>
     <swiper
     :slides-per-view="2"
@@ -126,7 +126,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper> 
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Pants</h1>
+  <h1 class="text-center font-bold text-xl m-2">PANTS</h1>
   <div class="flex flex-row p-0 item_list_class" v-auto-animate>
     <swiper
     :slides-per-view="4"
@@ -149,7 +149,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Shorts</h1>
+  <h1 class="text-center font-bold text-xl m-2">SHORTS</h1>
   <div class="flex flex-row p-0 item_list_class" v-auto-animate>
     <swiper
     :slides-per-view="2"
@@ -172,7 +172,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Shoes</h1>
+  <h1 class="text-center font-bold text-xl m-2">SHOES</h1>
   <div class="flex flex-row p-0 item_list_class" v-auto-animate>
     <swiper
     :slides-per-view="2"
@@ -195,7 +195,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
     </swiper-slide>
     </swiper>
   </div>
-  <h1 class="text-center font-bold text-xl m-2">Marginis Kids</h1>
+  <h1 class="text-center font-bold text-xl m-2">MARGINIS KIDS</h1>
   <div class="flex flex-row p-0 item_list_class mb-8" v-auto-animate>
     <swiper
     :slides-per-view="5"

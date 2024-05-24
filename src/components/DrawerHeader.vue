@@ -12,6 +12,6 @@ const { closeDrawer } = inject('cart')
       width="50"
       height="50"
     />
-    <h2 class="text-2xl font-bold text-red-600">Корзина</h2>
+    <h2 class="text-2xl font-bold text-red-600">Cart</h2>
   </div>
 </template>
