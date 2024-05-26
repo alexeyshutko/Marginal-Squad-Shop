@@ -3,6 +3,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
+import * as THREE from 'three';
 import App from './App.vue'
 
 import Home from './pages/Home.vue'
@@ -22,4 +23,5 @@ const router = createRouter({
 })
 app.use(router)
 app.use(autoAnimatePlugin)
+app.use(THREE)
 app.mount('#app')

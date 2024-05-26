@@ -11,8 +11,7 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
 </script>
 
 <template>
-  <div></div>
-  <h1 class="text-center font-bold text-xl">JACKETS</h1>
+  <h1 class="text-center font-bold text-xl">NEW COLLECTION</h1>
   <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
     <swiper
       :slides-per-view="3"
@@ -35,190 +34,15 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
       </swiper-slide>
     </swiper>
   </div>
+  <h1 class="text-center font-bold text-xl">JACKETS</h1>
   <h1 class="text-center font-bold text-xl">HOODY</h1>
-  <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
-    <swiper
-      :slides-per-view="4"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">SHIRTS</h1>
-  <div class="flex flex-row p-0 item_list_class m-2" v-auto-animate>
-    <swiper
-      :slides-per-view="2"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">T-SHIRTS</h1>
-  <div class="flex flex-row p-0 item_list_class" v-auto-animate>
-    <swiper
-      :slides-per-view="6"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">JEANS</h1>
-  <div class="flex flex-row p-0 item_list_class" v-auto-animate>
-    <swiper
-      :slides-per-view="2"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">PANTS</h1>
-  <div class="flex flex-row p-0 item_list_class" v-auto-animate>
-    <swiper
-      :slides-per-view="4"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">SHORTS</h1>
-  <div class="flex flex-row p-0 item_list_class" v-auto-animate>
-    <swiper
-      :slides-per-view="2"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">SHOES</h1>
-  <div class="flex flex-row p-0 item_list_class" v-auto-animate>
-    <swiper
-      :slides-per-view="2"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
   <h1 class="text-center font-bold text-xl m-2">MARGINIS KIDS</h1>
-  <div class="flex flex-row p-0 item_list_class mb-8" v-auto-animate>
-    <swiper
-      :slides-per-view="5"
-      :pagination="{ clicable: true }"
-      :scrollbar="{ draggable: true }"
-      navigation
-      :loop="true"
-    >
-      <swiper-slide v-for="item in items" :key="item.id">
-        <ItemBlock
-          :id="item.id"
-          :title="item.title"
-          :image-url="item.imageUrl"
-          :price="item.price"
-          :isFavorite="item.isFavorite"
-          :onClickFavorite="() => emit('addToFavorite', item)"
-          :onClickAdd="() => emit('addToCart', item)"
-          :isAdded="item.isAdded"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
 </template>
 <style>
 .item_list_class {

@@ -11,6 +11,7 @@ defineProps({
 });
 </script>
 <template>
+  
   <div
     class="p-1 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
   >
