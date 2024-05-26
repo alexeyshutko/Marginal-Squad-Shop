@@ -4,6 +4,7 @@ import { OBJLoader } from "../../public/OBJLoader";
 import { FontLoader } from "../../public/FontLoader";
 import { TextGeometry } from "../../public/TextGeometry";
 
+// Создание сцены и камеры
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -12,11 +13,13 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
+// Создание рендерера и установка цвета фона
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x800000); // Устанавливаем цвет фона (бардовый)
 document.body.appendChild(renderer.domElement);
 
+// Загрузка текстур для объекта
 const textureLoader = new THREE.TextureLoader();
 const aoTexture = textureLoader.load(
   "../../public/meat_boy/internal_ground_ao_texture.jpeg"
@@ -28,6 +31,7 @@ const diffuseTexture = textureLoader.load(
   "../../public/meat_boy/meatboy_texture.png"
 );
 
+// Загрузка объекта
 const loader = new OBJLoader();
 let obj;
 
@@ -50,8 +54,10 @@ loader.load("../../public/meat_boy/Super_meatboy_free.obj", function (object) {
 
   scene.add(object);
   obj = object;
+  object.position.y = 2;
 });
 
+// Добавление света
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0x080820, 1);
 scene.add(hemiLight);
 
@@ -64,35 +70,44 @@ const pointLight = new THREE.PointLight(0xffffff, 0.8);
 pointLight.position.set(5, 5, 5);
 scene.add(pointLight);
 
-camera.position.set(10, 10, 10);
-camera.lookAt(new THREE.Vector3(0, 0, 0));
+camera.position.set(0, 5, 15);
+camera.lookAt(new THREE.Vector3(0, 5, 0));
 
-// Загрузка шрифта и создание текста
+// Загрузка шрифта и создание текста с эффектом отражения
 const fontLoader = new FontLoader();
-fontLoader.load("path/to/helvetiker_regular.typeface.json", function (font) {
-  const textGeometry = new TextGeometry("MARGINIS", {
-    font: font,
-    size: 1,
-    height: 0.2,
-    curveSegments: 12,
-    bevelEnabled: true,
-    bevelThickness: 0.03,
-    bevelSize: 0.02,
-    bevelOffset: 0,
-    bevelSegments: 5,
-  });
+fontLoader.load(
+  "../../public/helvetiker_regular.typeface.json",
+  function (font) {
+    const textGeometry = new TextGeometry("MARGINIS", {
+      font: font,
+      size: 1,
+      height: 0.2,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 0.03,
+      bevelSize: 0.02,
+      bevelOffset: 0,
+      bevelSegments: 5,
+    });
 
-  const textMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 }); // Черный цвет для текста
-  const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+    const textMaterial = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      metalness: 1,
+      roughness: 0.3,
+      envMapIntensity: 1.5,
+    });
 
-  // Центрирование текста
-  textGeometry.computeBoundingBox();
-  const centerOffset =
-    -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
-  textMesh.position.set(centerOffset, 1, 0); // Подняли текст немного вверх
+    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
 
-  scene.add(textMesh);
-});
+    // Центрирование текста
+    textGeometry.computeBoundingBox();
+    const centerOffset =
+      -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
+    textMesh.position.set(centerOffset, 0, 0); // Центрирование текста по горизонтали
+
+    scene.add(textMesh);
+  }
+);
 
 function animate() {
   requestAnimationFrame(animate);
