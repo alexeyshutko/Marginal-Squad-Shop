@@ -1,5 +1,6 @@
 <script setup>
 import * as THREE from "three";
+import { OBJLoader } from "../../public/OBJLoader";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -13,32 +14,30 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-camera.position.z = 3;
+const loader = new OBJLoader();
+var obj;
 
-const floor = new THREE.Mesh(
-  new THREE.PlaneGeometry(10, 10),
-  new THREE.MeshStandardMaterial({
-    color: "#ff0000",
-    metalines: 0,
-    roughness: 0.5,
-  })
-);
-floor.receiveShadow = true;
-(floor.rotation.x = -Math.PI * 0), 5;
-scene.add(floor);
+loader.load("../../public/Super_meatboy_free.obj", function (object) {
+  scene.add(object);
+  obj = object;
+});
 
-const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
-hemiLight.position.set(0, 50, 0);
-scene.add(hemiLight);
+const light = new THREE.HemisphereLight(0xffffff, 0x080820, 1);
+scene.add(light);
 
-const dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
-dirLight.position.set(-8, 12, 8);
-dirLight.castShadow = true;
-dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
-scene.add(dirLight);
+camera.position.set(10, 0, 10);
+
+camera.lookAt(new THREE.Vector3(0, 10, 0));
+
+// const dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
+// dirLight.position.set(-8, 12, 8);
+// dirLight.castShadow = true;
+// dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
+// scene.add(dirLight);
 
 function animate() {
   requestAnimationFrame(animate);
+  obj.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
 animate();
