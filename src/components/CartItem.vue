@@ -17,9 +17,9 @@ defineProps({
       height="400"
     />
     <div class="flex flex-col flex-1">
-      <p class="text-red-600">{{ title }}</p>
+      <p class="text-red-400">{{ title }}</p>
       <div class="flex justify-between mt-2">
-        <b class="flex-1 text-red-600">{{ price }} ₽</b>
+        <b class="flex-1 text-red-400">{{ price }} ₽</b>
         <img
           @click="emit('onClickRemove')"
           class="opacity-40 hover:opacity-100 cursor-pointer transition"

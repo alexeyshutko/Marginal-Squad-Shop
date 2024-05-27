@@ -11,11 +11,10 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
 </script>
 
 <template>
-  <h1 class="text-center font-bold text-xl">NEW COLLECTION</h1>
-  <div
-    class="grid grid-rows-2 grid-flow-col p-0 m-2 "
-    v-auto-animate
-  >
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">
+    NEW COLLECTION
+  </h1>
+  <div class="grid grid-rows-2 grid-flow-col p-0 m-2" v-auto-animate>
     <ItemBlock
       v-for="item in items"
       :key="item.id"
@@ -29,15 +28,15 @@ const emit = defineEmits(["addToFavorite", "addToCart"]);
       :isAdded="item.isAdded"
     />
   </div>
-  <h1 class="text-center font-bold text-xl">JACKETS</h1>
-  <h1 class="text-center font-bold text-xl">HOODY</h1>
-  <h1 class="text-center font-bold text-xl m-2">SHIRTS</h1>
-  <h1 class="text-center font-bold text-xl m-2">T-SHIRTS</h1>
-  <h1 class="text-center font-bold text-xl m-2">JEANS</h1>
-  <h1 class="text-center font-bold text-xl m-2">PANTS</h1>
-  <h1 class="text-center font-bold text-xl m-2">SHORTS</h1>
-  <h1 class="text-center font-bold text-xl m-2">SHOES</h1>
-  <h1 class="text-center font-bold text-xl m-2">MARGINIS KIDS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">JACKETS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">HOODY</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">SHIRTS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">T-SHIRTS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">JEANS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">PANTS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">SHORTS</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">SHOES</h1>
+  <h1 class="text-center font-bold text-2xl text-red-600 shadow-2xl">MARGINIS KIDS</h1>
 </template>
 <style>
 .item_list_class {

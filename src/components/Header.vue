@@ -14,27 +14,28 @@ const emit = defineEmits(["openDrawer"]);
           alt="Logo"
           width="150"
           height="100"
-          class="mr-4 rounded-full border-double border-4 border-red-600 mt-2 mb-2"
+          class="mr-4 rounded-full border-double border-4 border-red-400 mt-2 mb-2"
         />
         <div>
-          <h1 class="text-2xl font-bold uppercase">MARGINIS</h1>
-          <h2 class="text-red-600 text-center font-bold">WORLDWIDE</h2>
+          <h1 class="text-2xl font-bold uppercase text-red-600">MARGINIS</h1>
+          <h2 class="text-red-400 text-center font-bold">WORLDWIDE</h2>
         </div>
       </div></router-link
     >
 
-    <ul class="flex items-center m-4">
+    <ul class="flex items-center">
       <li
         @click="() => emit('openDrawer')"
         class="flex items-center mr-4 text-black-600 cursor-pointer hover:text-red-600"
       >
         <img
+          class="mr-4"
           src="../../public/image/cart.svg"
           alt="Cart"
-          width="50"
-          height="50"
+          width="30"
+          height="30"
         />
-        <b>{{ totalPrice }} ₽</b>
+        <b class="text-red-400">{{ totalPrice }} ₽</b>
       </li>
 
       <!-- <router-link to="/favorites"
@@ -61,13 +62,14 @@ const emit = defineEmits(["openDrawer"]);
   <marquee
     behaivor="alternate"
     direction="left"
-    class="font-bold text-center bg-opacity-75 text-red-400 shadow-2xl bg-black"
+    class="font-bold text-center bg-opacity-75 text-red-400 shadow-2xl"
   >
-  <h1>
-    (from Latin margo, marginis — edge, border) in art: an author who adheres to
-    a sharply individual, distinctive creative strategy that differs from the
-    mainstream; a mix of a talented eccentric and an (in)voluntary outcast; a
-    master of inimitable uniqueness; an artist whose legacy fundamentally
-    opposes the officialdom.</h1>
+    <h1>
+      (from Latin margo, marginis — edge, border) in art: an author who adheres
+      to a sharply individual, distinctive creative strategy that differs from
+      the mainstream; a mix of a talented eccentric and an (in)voluntary
+      outcast; a master of inimitable uniqueness; an artist whose legacy
+      fundamentally opposes the officialdom.
+    </h1>
   </marquee>
 </template>

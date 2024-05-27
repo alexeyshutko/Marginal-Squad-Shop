@@ -111,6 +111,33 @@ onMounted(() => {
   camera.position.set(0, 5, 15);
   camera.lookAt(new THREE.Vector3(0, 0, 0));
 
+  // Создаем градиентный фон
+  const planeGeometry = new THREE.PlaneGeometry(100, 100, 1, 1);
+  const gradientMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      color1: { value: new THREE.Color(0x642b73) },
+      color2: { value: new THREE.Color(0xc6426e) },
+    },
+    vertexShader: `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+    fragmentShader: `
+    uniform vec3 color1;
+    uniform vec3 color2;
+    varying vec2 vUv;
+    void main() {
+      gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+    }
+  `,
+    side: THREE.DoubleSide,
+  });
+  const planeMesh = new THREE.Mesh(planeGeometry, gradientMaterial);
+  planeMesh.position.z = -10; // Установка позиции, чтобы фон был перед объектами
+  scene.add(planeMesh);
   // const fontLoader = new FontLoader();
   // fontLoader.load("public/helvetiker_regular.typeface.json", (font) => {
   //   const textGeometry = new TextGeometry("MARGINIS", {
@@ -157,20 +184,6 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.scene-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background: linear-gradient(135deg, #642b73, #c6426e); /* Градиентный фон */
-  cursor: grab;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .scene-container:active {
   cursor: grabbing;
@@ -186,9 +199,9 @@ onMounted(() => {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Arial Black", sans-serif; /* Шрифт текста */
+  font-family: "Arial Black", sans-serif;
   font-size: 3rem;
-  color: #fff; /* Цвет текста */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>

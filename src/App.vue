@@ -133,9 +133,7 @@ onUnmounted(() => {
             @create-order="createOrder"
             :button-disabled="cartButtonDisabled"
           />
-          <div
-            class="w-4/5 m-auto bg-white rounded-xl shadow-2xl mt-14 bg-opacity-75 scrollmenu"
-          >
+          <div class="w-4/5 m-auto home rounded-xl shadow-2xl mt-14 scrollmenu">
             <Header :total-price="totalPrice" @open-drawer="openDrawer" />
             <div class="">
               <router-view></router-view>
@@ -148,6 +146,13 @@ onUnmounted(() => {
 </template>
 
 <style>
+.home {
+  background: linear-gradient(
+    135deg,
+    rgba(100, 43, 115, 0.5),
+    rgba(198, 66, 110, 0.5)
+  );
+}
 .scene-wrapper {
   position: absolute;
   top: 0;

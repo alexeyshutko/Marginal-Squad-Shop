@@ -11,7 +11,6 @@ defineProps({
 });
 </script>
 <template>
-  
   <div
     class="p-1 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
   >
@@ -23,15 +22,12 @@ defineProps({
       height="50"
       class="absolute top-8 left-8"
     /> -->
-    <img
-      :src="'../../public/image/' + imageUrl"
-      alt="Marginis"
-    />
-    <h1 class="mt-2 text-red-700">{{ title }}</h1>
+    <img :src="'../../public/image/' + imageUrl" alt="Marginis" />
+    <h1 class="mt-2 text-red-400">{{ title }}</h1>
     <div class="flex justify-between mt-5">
       <div class="flex flex-col">
-        <span class="text-red-700">Price:</span>
-        <h1 class="text-red-700">{{ price }} ₽</h1>
+        <span class="text-red-600">Price:</span>
+        <h1 class="text-red-400">{{ price }} ₽</h1>
       </div>
 
       <img

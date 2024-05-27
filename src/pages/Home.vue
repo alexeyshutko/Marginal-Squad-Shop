@@ -146,12 +146,12 @@ watch(cart, () => {
       <img :src="`../../../public/image/${photo}`" />
     </swiper-slide>
   </swiper>
-  <div class="text-center">
+  <div class="text-center text-red-400">
     <h1>SS autumn 2024</h1>
   </div>
   <div class="flex justify-end items-center mr-2 mb-2 mt-2">
     <div class="flex items-end gap-4">
-      <div class="relative border border-2 border-red-600">
+      <div class="relative">
         <img
           src="../../public/image/search.svg"
           class="absolute left-3 top-3"

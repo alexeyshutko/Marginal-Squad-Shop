@@ -39,7 +39,7 @@ defineProps({
           @click="() => emit('createOrder')"
           class="my-4 transition bg-red-900 w-full rounded-xl py-3 text-white hover:bg-red-600 activ:bg-lime-700 disabled:bg-slate-300 cursor-pointer"
         >
-        Pay
+          Pay
         </button>
       </div>
     </div>
