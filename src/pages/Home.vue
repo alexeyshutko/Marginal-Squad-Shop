@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import ItemList from "../components/ItemList.vue";
-import Scene from "../components/Scene.vue";
 
 const modules = [Autoplay, Pagination, Navigation];
 
@@ -173,7 +172,6 @@ watch(cart, () => {
     @add-to-favorite="addToFavorite"
     @add-to-cart="onClickAddPlus"
   />
-  <Scene></Scene>
 </template>
 <style scoped>
 .swiper {
