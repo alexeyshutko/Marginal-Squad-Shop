@@ -184,7 +184,7 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .scene-container:active {
   cursor: grabbing;
 }
@@ -196,12 +196,12 @@ onMounted(() => {
 
 .brand-name {
   position: absolute;
-  top: 20px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Arial Black", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 3rem;
-  color: #fff;
+  color: #aa0000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>

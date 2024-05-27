@@ -10,7 +10,6 @@ import ItemList from "../components/ItemList.vue";
 const modules = [Autoplay, Pagination, Navigation];
 
 const carouselFhotos = [
-  "MS_SS_18_MAX.jpeg",
   "Devil_doesnt_sleep_Max_Tolstoy.jpeg",
   "post_culture_first.jpeg",
   "post_culture_second.jpeg",
@@ -167,18 +166,20 @@ watch(cart, () => {
       </div>
     </div>
   </div>
+  <div class="mb-8">
   <ItemList
     :items="items"
     @add-to-favorite="addToFavorite"
     @add-to-cart="onClickAddPlus"
   />
+</div>
 </template>
 <style scoped>
 .swiper {
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  width: 100%;
+  width: 90%;
   height: 80vh;
-  /* border: 10px solid rgb(114, 0, 0); */
+  border: 10px solid rgb(198, 4, 4);
 }
 .swiper-slide img {
   width: 100%;

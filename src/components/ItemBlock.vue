@@ -1,5 +1,8 @@
 <script setup>
-defineProps({
+import { defineProps } from 'vue';
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
   id: Number,
   imageUrl: String,
   title: String,
@@ -9,20 +12,30 @@ defineProps({
   onClickAdd: Function,
   onClickFavorite: Function,
 });
+
+const router = useRouter();
+
+const onClickAdd = (event) => {
+  event.stopPropagation();
+  props.onClickAdd();
+  router.push({
+    path: '/item',
+    query: {
+      id: props.id,
+      imageUrl: props.imageUrl,
+      title: props.title,
+      price: props.price,
+      isAdded: props.isAdded,
+      isFavorite: props.isFavorite,
+    },
+  });
+};
 </script>
 <template>
-  <div
-    class="p-1 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75"
-  >
-    <!-- <img
-      @click="onClickFavorite"
-      :src="!isFavorite ? '../../public/image/like_black.svg' : '../../public/image/like_red.svg'"
-      alt="Like_Item"
-      width="50"
-      height="50"
-      class="absolute top-8 left-8"
-    /> -->
-    <img :src="'../../public/image/' + imageUrl" alt="Marginis" />
+  <div class="p-1 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-opacity-75 w-full">
+    <router-link :to="{ path: '/item', query: { id: props.id, imageUrl: props.imageUrl, title: props.title, price: props.price, isAdded: props.isAdded, isFavorite: props.isFavorite } }">
+      <img :src="'../../public/image/' + imageUrl" alt="Marginis" />
+    </router-link>
     <h1 class="mt-2 text-red-400">{{ title }}</h1>
     <div class="flex justify-between mt-5">
       <div class="flex flex-col">
@@ -43,6 +56,7 @@ defineProps({
     </div>
   </div>
 </template>
+
 <style>
 .item_image {
   width: 50px !important;

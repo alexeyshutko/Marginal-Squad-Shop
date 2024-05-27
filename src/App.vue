@@ -135,7 +135,7 @@ onUnmounted(() => {
           />
           <div class="w-4/5 m-auto home rounded-xl shadow-2xl mt-14 scrollmenu">
             <Header :total-price="totalPrice" @open-drawer="openDrawer" />
-            <div class="">
+            <div>
               <router-view></router-view>
             </div>
           </div>

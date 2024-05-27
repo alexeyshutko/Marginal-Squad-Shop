@@ -64,7 +64,7 @@ const emit = defineEmits(["openDrawer"]);
     direction="left"
     class="font-bold text-center bg-opacity-75 text-red-400 shadow-2xl"
   >
-    <h1>
+    <h1 class="text-2xl">
       (from Latin margo, marginis — edge, border) in art: an author who adheres
       to a sharply individual, distinctive creative strategy that differs from
       the mainstream; a mix of a talented eccentric and an (in)voluntary
