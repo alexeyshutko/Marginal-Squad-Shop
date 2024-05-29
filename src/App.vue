@@ -89,7 +89,6 @@ const onMouseMove = (event) => {
   if (dragging.value) {
     const deltaY = event.clientY - startY.value;
     if (deltaY < -100) {
-      // Условие для скрытия шторки
       showScene.value = false;
       dragging.value = false;
     }
