@@ -48,7 +48,7 @@ const router = useRouter();
         },
       }"
     >
-      <img :src="'../../public/image/' + imageUrl" alt="Marginis" />
+      <img :src="'../../public/image/' + imageUrl" alt="Marginis" height="50"/>
     </router-link>
     <h1 class="mt-2 text-red-400">{{ title }}</h1>
     <div class="flex items-center">

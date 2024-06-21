@@ -10,7 +10,7 @@ const emit = defineEmits(["openDrawer"]);
     <router-link to="/"
       ><div class="flex items-center">
         <img
-          src="../../public/image/logo.jpeg"
+          src="../../public/image/logo.jpg"
           alt="Logo"
           width="150"
           height="100"
@@ -18,7 +18,7 @@ const emit = defineEmits(["openDrawer"]);
         />
         <div>
           <h1 class="text-2xl font-bold uppercase text-red-600">MARGINIS</h1>
-          <h2 class="text-red-400 text-center font-bold">WORLDWIDE</h2>
+          <h2 class="text-red-400 text-center font-bold">Ab imo pectore</h2>
         </div>
       </div></router-link
     >
