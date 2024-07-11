@@ -118,7 +118,7 @@ onUnmounted(() => {
     <div v-else>
       <div class="video-bg">
         <video
-          src="../public/videos/marginal_ss_19.mp4"
+          src="../public/videos/MARGINIS_SKATEBOARDING_DAY.mp4"
           type="video/mp4"
           autoplay
           muted

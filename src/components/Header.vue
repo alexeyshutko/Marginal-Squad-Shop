@@ -14,7 +14,7 @@ const emit = defineEmits(["openDrawer"]);
           alt="Logo"
           width="150"
           height="100"
-          class="mr-4 rounded-full border-double border-4 border-red-400 mt-2 mb-2"
+          class="mr-4 rounded-full border border-4 border-red-600 mt-2 mb-2"
         />
         <div>
           <h1 class="text-2xl font-bold uppercase text-red-600">MARGINIS</h1>

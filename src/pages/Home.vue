@@ -10,9 +10,9 @@ import ItemList from "../components/ItemList.vue";
 const modules = [Autoplay, Pagination, Navigation];
 
 const carouselFhotos = [
-  "Devil_doesnt_sleep_Max_Tolstoy.jpeg",
-  "post_culture_first.jpeg",
-  "post_culture_second.jpeg",
+  "MARGINIS_CAROUSEL_SKATE_00.jpg",
+  "MARGINIS_CAROUSEL_SKATE_01.jpg",
+  "MARGINIS_CAROUSEL_SKARE_02.ARW",
 ];
 
 const { cart, addToCart, removeFromCart } = inject("cart");
@@ -167,12 +167,12 @@ watch(cart, () => {
     </div>
   </div>
   <div class="mb-8">
-  <ItemList
-    :items="items"
-    @add-to-favorite="addToFavorite"
-    @add-to-cart="onClickAddPlus"
-  />
-</div>
+    <ItemList
+      :items="items"
+      @add-to-favorite="addToFavorite"
+      @add-to-cart="onClickAddPlus"
+    />
+  </div>
 </template>
 <style scoped>
 .swiper {
